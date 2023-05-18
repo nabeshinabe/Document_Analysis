@@ -2,7 +2,6 @@
 情報システム分析論のDocument Analysisの課題の提出フォルダ
 
 ## Assignment1(Document Clustering)
-----
 - Clustering
 - tf-idf
 - K-means
@@ -18,7 +17,6 @@ jupyter-notebookによる実行ファイル
 各文書のtf-idfの値の一覧
 
 ## Data
----
 一部のデータ(300個)は以下のサイトから取得:
 
 https://www.kaggle.com/datasets/jensenbaxter/10dataset-text-document-classification?resource=download
