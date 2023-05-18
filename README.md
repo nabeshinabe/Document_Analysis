@@ -8,8 +8,13 @@
 - Principal Component Analysis (PCA)
 
 ./Data内にある文書(301個)をクラスタリング。
-正規表現や置換により記号や数字の前処理を行った後、tf-idfでベクトル化。その後、K-means法で文書をクラスタリング。
-分析として主成分分析による可視化やKの値を変更した時の比較も行なっている。
+正規表現や置換により記号や数字の前処理を行った後、tf-idfでベクトル化。その後、K-meansで文書をクラスタリング。
+K-meansは以下の2通りで計算している。
+
+- scikit-learn (距離:Euclid Distance)
+- nltk (距離:Cosine Distance)
+
+分析として主成分分析による可視化やKの値を変更した時の比較も行なっている。(scikit-learnでのK-meansを使用)
 
 ### Assignment_1.ipynb
 jupyter-notebookによる実行ファイル
