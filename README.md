@@ -2,6 +2,7 @@
 情報システム分析論のDocument Analysisの課題の提出フォルダ
 
 ## Assignment1(Document Clustering)
+- 正規表現
 - Clustering
 - tf-idf
 - K-means
@@ -21,11 +22,31 @@ jupyter-notebookによる実行ファイル
 ### assignment_1_tf-idf.csv
 各文書のtf-idfの値の一覧
 
+## Assignment2(Topic Modeling)
+- 正規表現
+- LDA
+
+./Data2内にある文書(1001個)をトピック分析。
+正規表現や置換により記号や数字の前処理を行った後、
+LDAを用いてトピック分析をし、
+その後に可視化を行った。
+
+分析としてトピック数を変えた時の結果の比較も行なっている。
+
+### Assignment_2.ipynb
+jupyter-notebookによる実行ファイル
+
+
 ## Data
-一部のデータ(300個)は以下のサイトから取得:
+データ(1000個)は以下のサイトから取得:
 
 https://www.kaggle.com/datasets/jensenbaxter/10dataset-text-document-classification?resource=download
 
-Business, Entertainment, Food, Politics, Sport, Technologieから50個ずつ(1-50)文書を取得
+Assignment1では、
+Business, Entertainment, Food, Politics, Sport, Technologieから50個ずつ(1-50)文書を取得。
+加えて、オリジナルのテキスト一つ(music)を追加し、計301個使用。
 
-加えて、オリジナルのテキスト一つ(music)を追加
+Assignment2では、
+Business, Entertainment, Food, Graphics, Historical, Medical, Politics, Space, Sport, Technologieの各ジャンルから100個ずつ文書を取得。
+加えて、オリジナルのテキスト一つ(music)を追加し、計1001個使用。
+

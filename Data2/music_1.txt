@@ -1,0 +1,53 @@
+Wind band is a popular performance form for people of all ages. 
+It is desirable to prepare scores for wind band that are suitable for the composition and number of players in each group, 
+but if not, 
+it is necessary to arrange. 
+However, 
+arrangements for wind band require musical grammar, 
+and specialized knowledge such as characteristics of the instrumental parts and the relationships among the parts, 
+making it difficult for non-specialists to arrange effectively. 
+Therefore, 
+the technique to arrange musical scores for each band’s composition of the musical instruments is required.
+Until now, 
+there have been researches on the arrangement of large wind scores into smaller ones, 
+the automatic arrangement of piano scores into orchestral ones, 
+and more recently, 
+arrangement using deep neural networks (DNNs). 
+In this study, 
+we deal with all these challenges at once, 
+and we develop a method to automatically orchestrate piano scores for wind band with user-specified parts using DNNs. 
+We first create paired data to solve shortage of paired data. 
+Specifically, 
+we attempted to use pairs of wind scores and piano scores made by arranging it using existing piano arrangement methods. 
+Second, we design network using U-Net, 
+a type of fully convolutional network. 
+In particular, 
+the selected part information is created by user-specified parts from predefined 43 parts on 28 instruments, 
+and using it, 
+we design three ways of a network: "Simple", "Simultaneous", and "Separate". 
+With "Simple", 
+the standard method, the U-Net whose input is only a piano score and whose output is a wind score of the 43 parts is used, 
+and a wind score with selected parts is created based on the selected part information. 
+In the other two methods, the U-Net whose input is the piano score and the selected part information are used in common. 
+With "Simultaneous", the score using the same procedure as "Simple" is output, 
+while with "Separate", 
+it is repeated the one part score is output for the parts specified by the selected part information using the common U-Net and a wind score is created. 
+For each method, we will also compare the case where piano scores by up- and down-shifting an original piano score by one octave are simultaneously input into the network so that a wider range of notes is selected. 
+When scores are output, 
+we estimate a mask that determines whether or not to assign each note of the input piano score to each part.
+In the evaluation experiment, 
+using 30 pairs of the paired data created by the piano arrangement method with octave-shifted scores added, 
+we evaluated the average of note-level F-measure for each method. 
+The results showed 35.9% for "Separate", 25.1% for "Simple", and 8.4% for "Simultaneous", with the best result for "Separate". 
+Also, the each result of the F-measure for four pairs of the paired data arranged for piano and for wind band showed 20.4%, 13.8%, and 1.9% respectively, with the best result for "Separate", and implied the usefulness of the paired data created by the piano arrangement method. 
+In addition, a comparison of the F-measure for each part showed that there were no part that F-measure was 0% for only "Separate", indicating the effectiveness of "Separate" for parts used infrequently. 
+Finally, when outputting the scores with all parts for three methods, 
+it was found that only "Separate" output all parts, and showed a tendency that the notes of the input piano score to match the range of each instrument were chosen, 
+and the notes were placed following the natural order of the parts within each of the instrument groups. 
+These results suggest that it is possible to learn note placement more capturing the characteristics of each instrument or the relationships among parts by network learning using the selected part information.
+There still remain some issues in this result. 
+For example, there are unnatural note sequences and rhythms that ignore phrases in the output scores. 
+In addition, there is a fundamental problem that the correct answer is not uniquely determined for the arrangement, 
+and the goal is not only to improve note-level scores. 
+Therefore, 
+the study of appropriate evaluation indices and the quality evaluation of output scores through experts and actual performances are issues to be considered in the future.
